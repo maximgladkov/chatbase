@@ -17,7 +17,7 @@ module Chatbase
 
     def send_messages(request_parameters)
       request_parameters[:messages].each do |message|
-        message.merge!({'api_key': @agent_key})
+        message.merge!({'api_key' => @agent_key})
       end
       http_service.request_post("/api/messages", request_parameters)
     end
